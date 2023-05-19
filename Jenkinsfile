@@ -17,7 +17,7 @@ Pipeline {
        sh ''''
        docker build -t srinu:latest .
        docker push srinu:latest
-       ''
+       '''
      }
    }
   }
