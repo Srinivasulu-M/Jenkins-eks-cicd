@@ -8,6 +8,7 @@ pipeline {
     }
     stage("Docker login") {
       steps {
+      sh 'docker --version'
       sh ' Docker login -u -p'
       
       }
