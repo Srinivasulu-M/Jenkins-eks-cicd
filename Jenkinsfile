@@ -1,5 +1,9 @@
 pipeline {
   agent { label 'master' }
+  environment {
+    docker_user = credentials('docker-user')
+    docker_password = credentials('docker-passwd')
+  }
   stages {
     stage("Initializing") {
       steps {
@@ -9,7 +13,7 @@ pipeline {
     stage("Docker login") {
       steps {
       sh 'docker --version'
-      sh ' sudo docker login -u srinivasulumudduluru -p Subbamma@2233#'
+      sh ' sudo docker login -u $docker_user -p $docker_password'
       
       }
     }
