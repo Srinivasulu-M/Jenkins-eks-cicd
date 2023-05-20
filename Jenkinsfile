@@ -28,5 +28,18 @@ pipeline {
        '''
      }
    }
+    stage("eks deployment") { 
+      steps {
+      sh '''
+      sudo aws sts get-caller-identity
+      sudo aws eks update-kubeconfig --region ap-south-1 --name practice-eks
+      sudo aws eks list-clusters
+      sudo /var/lib/jenkins/kubectl get nodes 
+      sudo /var/lib/jenkins/kubectl create namespace srinu
+      sudo /var/lib/jenkins/kubectl apply -f deployment.yml -n srinu
+      sudo /var/lib/jenkins/kubectl get pods -n srinu
+      '''
+      }
+    }
   }
 }
