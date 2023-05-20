@@ -9,15 +9,15 @@ pipeline {
     stage("Docker login") {
       steps {
       sh 'docker --version'
-      sh ' Docker login -u -p'
+      sh ' sudo Docker login -u srinivasulumudduluru -p Subbamma@2233#'
       
       }
     }
    stage("Docker build") {
      steps {
        sh ''''
-       docker build -t srinu:latest .
-       docker push srinu:latest
+       sudo docker build -t srinivasulumudduluru/srinu:latest .
+       sudo docker push srinivasulumudduluru/srinu:latest
        '''
      }
    }
