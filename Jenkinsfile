@@ -24,6 +24,8 @@ pipeline {
        ls
        sudo docker build -t srinivasulumudduluru/srinu:latest .
        sudo docker push srinivasulumudduluru/srinu:latest
+       sudo su
+       kubectl --version
        '''
      }
    }
