@@ -1,16 +1,23 @@
-apiVersion: apps/V1
+apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  name: nginx-deploymnet
+metadata:
+  name: nginx-deployment
   labels:
-    nginx-deployment
+    app: nginx-deployment
 spec:
-  replicas: 3
-    template:
-      metadata
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-deployment
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment
     spec:
       containers:
-      - name: nginx
-	image: srinivasulumudduluru/srinu:latest
+      - name: nginx-deployment
+        image: srinivasulumudduluru/srinu:latest
         ports:
-          - containerPort: 80
+        - containerPort: 80
+          protocol: TCP
+
