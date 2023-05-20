@@ -24,7 +24,7 @@ pipeline {
        ls
        sudo docker build -t srinivasulumudduluru/srinu:latest .
        sudo docker push srinivasulumudduluru/srinu:latest
-       ./kubectl version --short --client
+       /var/lib/jenkins/kubectl version --short --client
        '''
      }
    }
