@@ -15,7 +15,7 @@ pipeline {
     }
    stage("Docker build") {
      steps {
-       sh ''''
+       sh '''
        pwd
        ls
        sudo docker build -t srinivasulumudduluru/srinu:latest .
