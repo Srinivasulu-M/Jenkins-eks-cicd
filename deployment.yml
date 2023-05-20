@@ -6,11 +6,11 @@ metadata:
     nginx-deployment
 spec:
   replicas: 3
-	template:
-	  metadata
-	spec:
-	  containers:
-	  - name: nginx
-	    image: srinivasulumudduluru/srinu:latest
-		ports:
-		  - containerPort: 80
+    template:
+      metadata
+    spec:
+      containers:
+      - name: nginx
+	image: srinivasulumudduluru/srinu:latest
+        ports:
+          - containerPort: 80
